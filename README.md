@@ -4,7 +4,7 @@ Template for my software READMEs
 This is a template README file for my software repositories.  This first paragraph of the README will summarize the software in a concise fashion, preferably using no more than one or two sentences.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
-[![Latest release](https://img.shields.io/github/v/release/mhucka/template.svg?style=flat-square&color=b44e88)](https://github.com/mhucka/template/releases)
+[![Latest release](https://img.shields.io/github/v/release/mhucka/zoinks.svg?style=flat-square&color=b44e88)](https://github.com/mhucka/zoinks/releases)
 
 
 Table of contents
