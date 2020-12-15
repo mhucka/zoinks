@@ -1,7 +1,7 @@
-Zoinks<img width="12%" align="right" src="https://github.com/mhucka/zoinks/raw/main/.graphics/zoinks-icon.png">
+Zoinks<img width="10%" align="right" src="https://github.com/mhucka/zoinks/raw/main/.graphics/zoinks-icon.png">
 ======
 
-Zoinks (_**Zo**tero **in**formation **k**ey-based **s**elector_) is a command-line utility that returns the values of selected fields of a bibliographic record given a Zotero select link, an item key, or even the path to a file attachment in your Zotero database.
+Zoinks (_**Zo**tero **in**formation quic**k** **s**earch_) is a command-line utility that returns the values of selected fields of a bibliographic record given a Zotero select link, an item key, or even the path to a file attachment in your Zotero database.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
 [![Latest release](https://img.shields.io/github/v/release/mhucka/zoinks.svg?style=flat-square&color=b44e88)](https://github.com/mhucka/zoinks/releases)
@@ -24,9 +24,15 @@ Table of contents
 Introduction
 ------------
 
-> "Shaggy has a characteristic speech pattern, marked by his frequent use of the filler word "like" and, when startled, his exclamations of "Zoinks!" &mdash; _from the Wikipedia entry for [Shaggy Rogers](https://en.wikipedia.org/wiki/Shaggy_Rogers), retrieved on 2020-12-15. Archived copy available [from the Wayback Machine](https://web.archive.org/web/20201112011139/https://en.wikipedia.org/wiki/Shaggy_Rogers)._
+> "Shaggy has a characteristic speech pattern, marked by his frequent use of the filler word "like" and, when startled, his exclamations of "**Zoinks**!" &mdash; _from the Wikipedia entry for [Shaggy Rogers](https://en.wikipedia.org/wiki/Shaggy_Rogers), retrieved on 2020-12-15. An [archived copy](https://web.archive.org/web/20201112011139/https://en.wikipedia.org/wiki/Shaggy_Rogers) is available in the Wayback Machine._
 
-[... forthcoming ...]
+When using [Zotero](https://zotero.org) in scripts and other software, you may need a way to retrieve information about bibliographic entries without searching for them in Zotero itself.  _Zoinks_ (a loose acronym for _**Zo**tero **in**formation quic**k **s**earch_) is a program that lets you do this from the command line.  Given one or more field names and something that identifies a Zotero record &ndash; an item key, a [Zotero select link](https://forums.zotero.org/discussion/78053/given-the-pdf-file-of-an-article-how-can-you-find-out-its-uri#latest), or just a path to a PDF file in your local Zotero library &ndash; Zoinks returns the values of the fields in the Zotero record.  For example, the following command returns the citation key for a specific paper in my Zotero database:
+
+```sh
+zoinks -f citekey zotero://select/library/items/32TR4H94
+```
+
+Zoinks is a companion to [Zowie](https://github.com/mhucka/zowie), a command-line application that writes Zotero select links into PDF files to make them accessible outside of Zotero.
 
 
 Installation
