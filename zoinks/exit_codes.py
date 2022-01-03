@@ -9,7 +9,7 @@ Michael Hucka <mhucka@caltech.edu> -- Caltech Library
 Copyright
 ---------
 
-Copyright (c) 2020 by the California Institute of Technology.  This code is
+Copyright (c) 2021 by the California Institute of Technology.  This code is
 open-source software released under a 3-clause BSD license.  Please see the
 file "LICENSE" for more information.
 '''
@@ -34,10 +34,9 @@ class ExitCode(Enum):
     success        = 0, "success -- program completed normally"
     user_interrupt = 1, "the user interrupted the program's execution"
     bad_arg        = 2, "encountered a bad or missing value for an option"
-    no_network     = 3, "no network detected -- cannot proceed"
-    file_error     = 4, "file error -- encountered a problem with a file or directory"
-    server_error   = 5, "server error -- encountered a problem with the server"
-    exception      = 6, "an exception or fatal error occurred"
+    file_error     = 3, "encountered a problem with a file or directory"
+    zotero_error   = 4, "encountered a problem communicating with Zotero or BBT"
+    exception      = 5, "a miscellaneous exception or fatal error occurred"
 
     def __int__(self):
         return self.value
