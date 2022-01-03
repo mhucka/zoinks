@@ -91,3 +91,4 @@ dist
 docs/_build
 .README.md.tmp
 *.bak
+zoinks.egg-info
