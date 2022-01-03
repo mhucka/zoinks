@@ -12,7 +12,7 @@ repository-code: "https://github.com/mhucka/zoinks"
 title: ""
 date-released: 2022-01-03
 version: "0.0.2"
-doi: 10.22002/0000
+doi: 10.22002/8768
 keywords: 
   - Zotero
   - command-line software
