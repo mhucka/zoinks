@@ -1,5 +1,10 @@
 # Change log for Zoinks
 
+## ★ Version 0.0.4 ★
+
+This release fixes a missing requirement in `requirements.txt`.
+
+
 ## ★ Version 0.0.3 ★
 
 Version 0.0.2's fix was incomplete. Hopefully this finally fixes the program name problem in `setup.py`.
