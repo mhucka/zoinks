@@ -21,12 +21,12 @@ the file "LICENSE" for more information.
 #  |    by the Makefile. Manual changes to these values will be lost.      |
 #  ╰────────────────────── Notice ── Notice ── Notice ─────────────────────╯
 
-__version__     = '0.0.0'
-__description__ = 'Command-line utility to retrieve field values from Zotero records'
+__version__     = '0.0.1'
+__description__ = 'Zoinks: a command-line utility to retrieve Zotero record values'
 __url__         = 'https://github.com/mhucka/zoinks'
-__author__      = 'Michael Hucka'
+__author__      = 'Mike Hucka'
 __email__       = 'mhucka@caltech.edu'
-__license__     = 'BSD 3-clause'
+__license__     = 'BSD 3-clause license'
 
 
 # Miscellaneous utilities.
