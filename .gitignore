@@ -85,3 +85,9 @@ __pycache__
 
 # Project-specific things to ignore:
 # .............................................................................
+
+build
+dist
+docs/_build
+.README.md.tmp
+*.bak
