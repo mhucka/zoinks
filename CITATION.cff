@@ -11,7 +11,7 @@ message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/mhucka/zoinks"
 title: ""
 date-released: 2022-01-03
-version: "0.0.3"
+version: "0.0.4"
 doi: 10.22002/8769
 keywords: 
   - Zotero
