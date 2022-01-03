@@ -24,4 +24,8 @@ import zoinks
 from zoinks.__main__ import main as main
 
 if __name__ == "__main__":
-    plac.call(main)
+    if len(sys.argv) > 1 and sys.argv[1] == 'help':
+        plac.call(main, ['-h'])
+    else:
+        plac.call(main)
+    main()
