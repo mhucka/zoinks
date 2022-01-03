@@ -9,7 +9,7 @@ Michael Hucka <mhucka@caltech.edu> -- Caltech Library
 Copyright
 ---------
 
-Copyright (c) 2020 by Michael Hucka and the California Institute of Technology.
+Copyright (c) 2022 by Michael Hucka and the California Institute of Technology.
 This code is open-source software released under the MIT license.  Please see
 the file "LICENSE" for more information.
 '''
