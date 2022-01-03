@@ -17,7 +17,6 @@ Table of contents
 * [Getting help](#getting-help)
 * [Contributing](#contributing)
 * [License](#license)
-* [Authors and history](#authors-and-history)
 * [Acknowledgments](#authors-and-acknowledgments)
 
 
@@ -68,16 +67,12 @@ I would be happy to receive your help and participation if you are interested.  
 License
 -------
 
-This software is Copyright (C) 2020, by Michael Hucka and the California Institute of Technology (Pasadena, California, USA).  This software is freely distributed under a 3-clause BSD type license.  Please see the [LICENSE](LICENSE) file for more information.
-
-
-Authors and history
----------------------------
-
-Copyright (c) 2020 by Michael Hucka and the California Institute of Technology.
+This software is Copyright (C) 2022, by Michael Hucka and the California Institute of Technology (Pasadena, California, USA).  This software is freely distributed under a 3-clause BSD type license.  Please see the [LICENSE](LICENSE) file for more information.
 
 
 Acknowledgments
 ---------------
 
 This work is a personal project developed by the author, using computing facilities and other resources of the [California Institute of Technology Library](https://www.library.caltech.edu).
+
+The [vector artwork](https://thenounproject.com/term/surprise/2696259/) of a surprised person, used as the icon for this repository, was created by [Adrien Coquet](https://thenounproject.com/coquet_adrien/) from the Noun Project.  It is licensed under the Creative Commons [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/) license.
