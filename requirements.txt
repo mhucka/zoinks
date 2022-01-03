@@ -1,0 +1,16 @@
+# =============================================================================
+# @file    requirements.txt
+# @brief   Python dependencies for foliage
+# @created 2021-10-16
+# @license Please see the file named LICENSE in the project directory
+# @website https://github.com/mhucka/zoinks
+# =============================================================================
+
+appscript  == 1.1.2
+commonpy   == 1.7.3
+plac       == 1.3.3
+requests   == 2.25.1
+sidetrack  == 2.0.0
+setuptools == 58.3.0
+uritools   == 3.0.0
+pytest     == 6.2.5
