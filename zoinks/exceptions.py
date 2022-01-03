@@ -9,7 +9,7 @@ Michael Hucka <mhucka@caltech.edu> -- Caltech Library
 Copyright
 ---------
 
-Copyright (c) 2020 by Michael Hucka and the California Institute of Technology.
+Copyright (c) 2022 by Michael Hucka and the California Institute of Technology.
 This code is open-source software released under a 3-clause BSD license.
 Please see the file "LICENSE" for more information.
 '''
@@ -28,34 +28,10 @@ class ZoinksException(Exception):
 # Exception classes.
 # .............................................................................
 
-class CannotProceed(ZoinksException):
-    '''A recognizable condition caused an early exit from the program.'''
-    pass
-
-class UserCancelled(ZoinksException):
-    '''The user elected to cancel/quit the program.'''
-    pass
-
-class NetworkFailure(ZoinksException):
+class ConnectionFailure(ZoinksException):
     '''Unrecoverable problem involving network operations.'''
     pass
 
-class ServiceFailure(ZoinksException):
-    '''Unrecoverable problem involving a remote service.'''
-    pass
-
-class AuthenticationFailure(ZoinksException):
-    '''Problem obtaining or using authentication credentials.'''
-    pass
-
-class InternalError(ZoinksException):
+class ZoinksError(ZoinksException):
     '''Unrecoverable problem involving Zoinks itself.'''
-    pass
-
-class NotFound(ZoinksException):
-    '''Item could not be found.'''
-    pass
-
-class FileError(ZoinksException):
-    '''Problem reading or writing a file or its attributes.'''
     pass
