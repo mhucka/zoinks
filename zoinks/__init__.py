@@ -21,7 +21,7 @@ the file "LICENSE" for more information.
 #  |    by the Makefile. Manual changes to these values will be lost.      |
 #  ╰────────────────────── Notice ── Notice ── Notice ─────────────────────╯
 
-__version__     = '0.0.1'
+__version__     = '0.0.2'
 __description__ = 'Zoinks: a command-line utility to retrieve Zotero record values'
 __url__         = 'https://github.com/mhucka/zoinks'
 __author__      = 'Mike Hucka'
