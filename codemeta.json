@@ -6,7 +6,7 @@
   "codeRepository": "https://github.com/mhucka/zoinks",
   "issueTracker": "https://github.com/mhucka/zoinks/issues",
   "license": "https://github.com/mhucka/zoinks/blob/master/LICENSE",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": [
     {
       "@type": "Person",
