@@ -188,9 +188,7 @@ def clipboard():
 
 
 def item_key(x):
-    if x.startswith('zotero://'):
-        return x.rsplit('/', 1)[-1]
-    return x
+    return x.rsplit('/', 1)[-1] if x.startswith('zotero://') else x
 
 
 def bbt_running():
@@ -229,10 +227,6 @@ def bbt_rpc(method, params):
             return [CaseFoldDict(item) for item in payload['items']]
         return CaseFoldDict(payload)
     return CaseFoldDict(result_dict)
-
-
-def zotero_record(identifier):
-    pass
 
 
 def pretty_print(record, indent = 0):
