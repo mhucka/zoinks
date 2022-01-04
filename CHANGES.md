@@ -2,6 +2,11 @@
 
 ## ★ Version 0.0.4 ★
 
+This release updates the minimum version of CommonPy to 1.8.1.
+
+
+## ★ Version 0.0.4 ★
+
 This release fixes a missing requirement in `requirements.txt`.
 
 
