@@ -1,6 +1,16 @@
 # Change log for Zoinks
 
-## ★ Version 0.0.4 ★
+## ★ Version 0.0.6 ★
+
+Changes in this release:
+
+* Fixes to parsing Zotero select links
+* Added help text to `zoinks` for `-h` and `help` commands.
+* Updated versions of dependencies in `requirements.txt`.
+* Added `requirements-dev.txt`.
+
+
+## ★ Version 0.0.5 ★
 
 This release updates the minimum version of CommonPy to 1.8.1.
 
