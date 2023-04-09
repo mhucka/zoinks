@@ -8,6 +8,8 @@ Changes in this release:
 * Added help text to `zoinks` for `-h` and `help` commands.
 * Updated versions of dependencies in `requirements.txt`.
 * Added `requirements-dev.txt`.
+* Improved `codemeta.json`.
+* Updated `Makefile`.
 
 
 ## ★ Version 0.0.5 ★
