@@ -1,5 +1,13 @@
 # Change log for Zoinks
 
+## ★ Version 0.0.7 ★
+
+Changes in this release:
+
+* Update required version of CommonPy in `requirements.txt` to latest one.
+* Fix copy-paste error in `Makefile`.
+
+
 ## ★ Version 0.0.6 ★
 
 Changes in this release:

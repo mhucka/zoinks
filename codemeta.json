@@ -3,9 +3,9 @@
     "@type": "SoftwareSourceCode",
     "name": "Zoinks",
     "description": "Zoinks is a command-line utility to retrieve fields from Zotero entries",
-    "version": "0.0.6",
-    "softwareVersion": "0.0.6",
-    "datePublished": "2023-04-09",
+    "version": "0.0.7",
+    "softwareVersion": "0.0.7",
+    "datePublished": "2023-04-12",
     "author": [
         {
             "@type": "Person",
