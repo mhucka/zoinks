@@ -28,7 +28,7 @@ TEST := $(foreach p,$(programs_needed),\
 	  $(if $(shell which $(p)),_,$(error Cannot find program "$(p)")))
 
 # Set some basic variables.  These are quick to set; we set additional
-# variables using "set-vars" but only when the others are needed.
+# variables using "vars" but only when the others are needed.
 
 name     := $(strip $(shell awk -F "=" '/^name/ {print $$2}' setup.cfg))
 version  := $(strip $(shell awk -F "=" '/^version/ {print $$2}' setup.cfg))
@@ -145,37 +145,37 @@ dependencies:;
 
 pyinstaller $(distdir)/$(app_name): | vars dependencies run-pyinstaller make-zip
 
-run-pyinstaller: vars foliage/data/macos-systray-widget/macos-systray-widget
+run-pyinstaller: vars
 	@mkdir -p $(distdir)
 	pyinstaller --distpath $(distdir) --clean --noconfirm pyinstaller-$(os).spec
 
 make-zip: run-pyinstaller
-	$(eval tmp_file := $(shell mktemp /tmp/comments-$(name).XXXX))
-	cat <<- EOF > $(tmp_file)
+	$(eval comments_file := $(shell mktemp /tmp/comments-$(name).XXXX))
+	cat <<- EOF > $(comments_file)
 	┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 	┃ This Zip archive file includes a self-contained, runnable ┃
-	┃ version of the program Foliage for macOS. To learn        ┃
-	┃ more about Foliage, please visit the following site:      ┃
+	┃ version of the program Zoinks for macOS. To learn         ┃
+	┃ more about Zoinks, please visit the following site:       ┃
 	┃                                                           ┃
 	┃         https://github.com/$(repo)         ┃
 	┃                                                           ┃
 	┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	EOF
 	zip $(zipfile) $(distdir)/$(name)
-	zip -z $(zipfile) < $(tmp_file)
-	-rm -f $(tmp_file)
+	zip -z $(zipfile) < $(comments_file)
+	-rm -f $(comments_file)
 
 shiv zipapps: | run-shiv
 
 run-shiv:;
-	@mkdir -p dist
-	dev/scripts/create-pyz dist 3.8.2
-	dev/scripts/create-pyz dist 3.9.5
-	dev/scripts/create-pyz dist 3.10.0
+	@mkdir -p $(distdir)
+	dev/scripts/create-pyz $(distdir) 3.8.2
+	dev/scripts/create-pyz $(distdir) 3.9.5
+	dev/scripts/create-pyz $(distdir) 3.10.0
 
 build-darwin: $(distdir)/$(app_name) # $(about-file) $(help-file) # NEWS.html
-#	packagesbuild dev/installer-builders/macos/packages-config/Foliage.pkgproj
-#	mv dist/Foliage-mac.pkg dist/Foliage-$(release)-macos-$(macos_vers).pkg 
+#	packagesbuild dev/installer-builders/macos/packages-config/Zoinks.pkgproj
+#	mv dist/Zoinks-mac.pkg dist/Zoinks-$(release)-macos-$(macos_vers).pkg 
 
 
 # make install ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -230,18 +230,26 @@ release-on-github: | update-init update-meta update-citation commit-updates
 	sleep 2
 	$(EDITOR) $(tmp_file)
 	gh release create v$(version) -t "Release $(version)" -F $(tmp_file)
+	-rm -f $(tmp_file)
+
+upload-binaries: | vars binaries
+	gh release upload v$(version) dist/$(name).zip
+	gh release upload v$(version) dist/*/$(name)-${version}-macos-python3.*.zip
 
 print-instructions: vars
-	@$(info ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓)
-	@$(info ┃ Next steps:                                                ┃)
-	@$(info ┃ 1. Check https://github.com/$(repo)/releases )
-	@$(info ┃ 2. Wait a few seconds to let web services do their work    ┃)
-	@$(info ┃ 3. Run "make update-doi" to update the DOI in README.md    ┃)
-	@$(info ┃ 4. Run "make packages" and check the results               ┃)
-	@$(info ┃ 5. Run "make test-pypi" to push to test.pypi.org           ┃)
-	@$(info ┃ 6. Check https://test.pypi.org/project/$(name) )
-	@$(info ┃ 7. Run "make pypi" to push to pypi for real                ┃)
-	@$(info ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛)
+	@$(info ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓)
+	@$(info ┃ Next steps:                                               ┃)
+	@$(info ┃ 1. Double-check https://github.com/@$(repo)/releases )
+	@$(info ┃ 2. Wait a few seconds to let web services do their work   ┃)
+	@$(info ┃ 3. Run "make update-doi" to update the DOI in README.md   ┃)
+	@$(info ┃ 4. Run "make binaries" to create binaries                 ┃)
+	@$(info ┃ 5. Run "make upload-binaries" to upload to Github         ┃)
+	@$(info ┃ 6. Run "make packages" and check the results for problems ┃)
+	@$(info ┃ 7. Run "make test-pypi" to push to test.pypi.org          ┃)
+	@$(info ┃ 8. Double-check https://test.pypi.org/@$(repo) )
+	@$(info ┃ 9. Run "make pypi" to push to pypi for real               ┃)
+	@$(info ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛)
+	@echo ""
 
 update-doi: vars
 	sed -i .bak -e 's|/api/record/[0-9]\{1,\}|/api/record/$(doi_tail)|' README.md
@@ -304,10 +312,8 @@ clean-release:;
 	-rm -rf $(name).egg-info codemeta.json.bak $(initfile).bak README.md.bak
 
 clean-other:;
-	-find ./ -name '*.pyc' -exec rm -f {} \;
-	-find ./ -name '__pycache__' -exec rm -rf {} \;
-	-find ./ -name 'Thumbs.db' -exec rm -f {} \;
-	-rm -rf .cache
+	-rm -fr __pycache__ $(name)/__pycache__ .eggs
 
-.PHONY: release release-on-github update-init update-meta update-citation \
-	print-instructions packages clean test-pypi pypi
+.PHONY: release release-on-github update-init update-codemeta \
+	vars print-instructions update-doi packages test-pypi pypi clean \
+	clean-dist really-clean-dist clean-build clean-release clean-other
