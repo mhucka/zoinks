@@ -8,9 +8,9 @@
 
 -r requirements.txt
 
-twine       >= 4.0.0
-pyinstaller >= 5.9.0
+twine
+pyinstaller >= 6.3.0
 
-pytest      >= 6.2.5
-pytest-cov  >= 3.0.0
-pytest-mock >= 3.7.0
+pytest      >= 7.3.0
+pytest-cov  >= 4.1.0
+pytest-mock >= 3.12.0
