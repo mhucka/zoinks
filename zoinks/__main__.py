@@ -362,7 +362,7 @@ def inform(msg, no_gui):
         print(msg)
     else:
         from osax import OSAX
-        sa = OSAX("StandardAdditions", name = "System Events")
+        sa = OSAX(name = "System Events")
         sa.activate()
         # The text below uses Unicode characters to produce bold text.
         sa.display_dialog('𝗭𝗼𝗶𝗻𝗸𝘀 𝗲𝗿𝗿𝗼𝗿:\n\n' + msg, buttons = ["OK"],
