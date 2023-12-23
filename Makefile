@@ -169,9 +169,10 @@ shiv zipapps: | run-shiv
 
 run-shiv:;
 	@mkdir -p $(distdir)
-	dev/scripts/create-pyz $(distdir) 3.8.2
-	dev/scripts/create-pyz $(distdir) 3.9.5
-	dev/scripts/create-pyz $(distdir) 3.10.0
+	dev/scripts/create-pyz $(distdir) 3.8.16
+	dev/scripts/create-pyz $(distdir) 3.9.16
+	dev/scripts/create-pyz $(distdir) 3.10.10
+	dev/scripts/create-pyz $(distdir) 3.11.2
 
 build-darwin: $(distdir)/$(app_name) # $(about-file) $(help-file) # NEWS.html
 #	packagesbuild dev/installer-builders/macos/packages-config/Zoinks.pkgproj
@@ -239,14 +240,14 @@ upload-binaries: | vars binaries
 print-instructions: vars
 	@$(info ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓)
 	@$(info ┃ Next steps:                                               ┃)
-	@$(info ┃ 1. Double-check https://github.com/@$(repo)/releases )
+	@$(info ┃ 1. Double-check https://github.com/$(repo)/releases )
 	@$(info ┃ 2. Wait a few seconds to let web services do their work   ┃)
 	@$(info ┃ 3. Run "make update-doi" to update the DOI in README.md   ┃)
 	@$(info ┃ 4. Run "make binaries" to create binaries                 ┃)
 	@$(info ┃ 5. Run "make upload-binaries" to upload to Github         ┃)
 	@$(info ┃ 6. Run "make packages" and check the results for problems ┃)
 	@$(info ┃ 7. Run "make test-pypi" to push to test.pypi.org          ┃)
-	@$(info ┃ 8. Double-check https://test.pypi.org/@$(repo) )
+	@$(info ┃ 8. Double-check https://test.pypi.org/$(repo) )
 	@$(info ┃ 9. Run "make pypi" to push to pypi for real               ┃)
 	@$(info ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛)
 	@echo ""

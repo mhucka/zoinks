@@ -1,5 +1,13 @@
 # Change log for Zoinks
 
+## ★ Version 0.0.8 ★
+
+Changes in this release:
+
+* Updated Python dependencies.
+* Update parameters to latest version of `OSAX` from the `appscript` package.
+
+
 ## ★ Version 0.0.7 ★
 
 Changes in this release:
